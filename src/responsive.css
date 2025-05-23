@@ -1,0 +1,149 @@
+/* Responsive styles for the elemental golems application */
+
+/* Base responsive adjustments */
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .arcane-container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+  }
+  
+  /* Adjust navigation for mobile */
+  .nav-container {
+    flex-direction: column;
+    padding: 0.5rem 0;
+  }
+  
+  .dodecahedron-container {
+    margin: 0.5rem 0;
+  }
+  
+  /* Adjust chat interface for mobile */
+  .chat-message-user, 
+  .chat-message-golem {
+    max-width: 90%;
+  }
+  
+  .action-buttons {
+    justify-content: space-around;
+  }
+}
+
+/* Accessibility enhancements */
+:focus {
+  outline: 2px solid rgba(179, 166, 125, 0.8);
+  outline-offset: 2px;
+}
+
+/* Ensure text is readable */
+.text-gold {
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Improve touch targets for mobile */
+button, 
+a, 
+input[type="checkbox"], 
+input[type="radio"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Ensure proper contrast */
+input::placeholder {
+  color: rgba(179, 166, 125, 0.6);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .rotating-dodecahedron {
+    animation: none !important;
+  }
+}
+
+/* Dark mode adjustments (already dark by default) */
+@media (prefers-color-scheme: light) {
+  /* Force dark theme even in light mode */
+  body {
+    background-color: #0a0a0a !important;
+    color: #b3a67d !important;
+  }
+}
+
+/* Ensure 3D elements are responsive */
+.golem-model-container {
+  height: 300px;
+}
+
+@media (max-width: 768px) {
+  .golem-model-container {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .golem-model-container {
+    height: 150px;
+  }
+}
+
+/* Pentagram adjustments for smaller screens */
+@media (max-width: 640px) {
+  .pentagram-container {
+    transform: scale(0.8);
+  }
+  
+  .element-symbol {
+    transform: scale(0.8);
+  }
+}
+
+/* Ensure form elements are accessible */
+input:disabled,
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
